@@ -3,7 +3,6 @@ var express = require('express');
 var router = express.Router();
 var reserva = require('./../inc/reserva');
 
-
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
@@ -50,7 +49,6 @@ router.get('/reserva', function (req, res, next) {
 
 });
 
-/* POST Reserva page */ 
 router.post('/reserva', function (req, res, next) {
 
   if (!req.body.name) {
