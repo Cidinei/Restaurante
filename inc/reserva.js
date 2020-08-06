@@ -2,10 +2,10 @@ var conn = require('./db');
 
 module.exports = {
 
-  render(req, res, error) {
+  render(req, res, error, success) {
     res.render('reserva', {
       title: 'Reservas - Boteco Do Mosquito',
-      banner: '',
+      banner: 'images/img_bg_1.jpg',
       h1: 'Reserve aqui',
       body: req.body,
       error,
@@ -16,6 +16,9 @@ module.exports = {
   save(fields) {
 
     return new Promise((resolve, reject) => {
+
+      let date = fields.date.split('/');
+      fields.date = `${date[2]}-${date[1]}-${date[0]}`;
 
       conn.query(`
       INSERT INTO tb_reserva (name, email, people, date, time, phone)

@@ -12,6 +12,7 @@ router.get('/', function (req, res, next) {
       menus: results,                  
       banner: 'images/img_bg_1.jpg',
       h1: 'Restaurante Saboroso!',
+      icone: 'restaurante.ico',
       isHome: true,
     });
 
@@ -25,6 +26,7 @@ router.get('/contact', function (req, res, next) {
   res.render('contact', {
     title: 'Contato - Boteco Do Mosquito',
     banner: 'images/img_bg_3.jpg',
+    icone: 'restaurante.ico',
     h1: 'Diga um oi!'
   });
 });
@@ -37,6 +39,7 @@ router.get('/menus', function (req, res, next) {
       title: 'Nosso Menu',
       menus: results,
       banner: 'images/img_bg_1.jpg',
+      icone: 'restaurante.ico',
       h1: 'Saboreie nosso menu!'
     });
   });
@@ -84,6 +87,7 @@ router.get('/services', function (req, res, next) {
   res.render('services', {
     title: 'Nossos Serviços',
     banner: 'images/img_bg_1.jpg',
+    icone: 'restaurante.ico',
     h1: 'É um prazer poder servir!'
   });
 });
