@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
   menus.getMenus().then(results => {
     res.render('index', {
       title: 'Boteco Do Mosquito',
-      menus: results, 
+      menus: results,                  
       banner: 'images/img_bg_1.jpg',
       h1: 'Restaurante Saboroso!',
       isHome: true,
@@ -42,7 +42,7 @@ router.get('/menus', function (req, res, next) {
   });
 });
 
-/* GET Reserva page */ 
+/* GET Reserva page */
 router.get('/reserva', function (req, res, next) {
 
   reserva.render(req, res);
