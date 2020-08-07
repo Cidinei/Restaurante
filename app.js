@@ -4,14 +4,38 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const redis = require('redis');
+const session = require('express-session');
+let RedisStore = require('connect-redis')(session)
+/* var session = require('express-session');
+var redisStore = require('connect-redis')(session); */
+ 
+var adminRouter = require('./routes/admin');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+let redisClient = redis.createClient({
+  host: 'localhost',
+  port: 6379,
+  password: 'So@d12061998*',
+  db: 1
+});
+
+app.use(
+  session({
+    store: new RedisStore({client: redisClient}),
+    secret: 'So@d12061998*',
+    resave: true,
+    saveUninitialized: true
+  })
+);
+ 
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -20,7 +44,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

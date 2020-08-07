@@ -4,72 +4,65 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="col-md-6 animate-box">
-              <% if (typeof error === "string") {%>
-              <div class="alert alert-danger">
-                <%= error %>
-              </div>
-							<% } %>
-							<% if (typeof success === "string") {%>
-								<div class="alert alert-success">
-									<%= success %>
-								</div>
-								<% } %>
+              <%- include('alerts') -%>
 							<h3>Reserva de mesa</h3>
-							<form action="/reserva" method="POST">
-								<div class="row form-group">
-									<div class="col-md-12">
-										<label for="inputName">Nome</label>
-										<input type="text" id="inputName" name="name"  class="form-control" required value="<%= body.name %>">
-									</div>
-								</div>
-								<div class="row form-group">
-									<div class="col-md-12">
-										<label for="inputEmail">E-mail</label>
-										<input type="email" id="inputEmail" name="email" class="form-control"value="<%= body.email %>">
-									</div>
-								</div>
-								<div class="row form-group">
-									<div class="col-md-12">
-										<label for="inputPeople">Pessoas</label>
-										<select id="inputPeople" name="people" class="form-control" title="Quantos Lugares" required>
-											<option value=""> -- selecione -- </option>
-											<option <% if (body.people == 1) { %>selected<% } %> value="1">1</option>
-											<option <% if (body.people == 2) { %>selected<% } %> value="2">2</option>
-											<option <% if (body.people == 3) { %>selected<% } %> value="3">3</option>
-                      <option <% if (body.people == 4) { %>selected<% } %> value="4">4</option>
-                      <option <% if (body.people == 5) { %>selected<% } %> value="5">5</option>
-											<option <% if (body.people == 6) { %>selected<% } %> value="6">6</option>
-											<option <% if (body.people == 7) { %>selected<% } %> value="7">7</option>
-											<option <% if (body.people == 8) { %>selected<% } %> value="8">8</option>
-											<option <% if (body.people == 9) { %>selected<% } %> value="9">9+</option>
-										</select>
-									</div>
-								</div>
-								<div class="row form-group">
-									<div class="col-md-12">
-										<label for="inputDate">Data</label>
-										<input type="text" id="inputDate" name="date" class="form-control"  required value="<%= body.date %>">
-									</div>
-								</div>
-								<div class="row form-group">
-									<div class="col-md-12">
-										<label for="inputTime">Hora</label>
-										<input type="text" id="inputTime" name="time" class="form-control" required value="<%= body.time %>">
-									</div>
-                </div>
-                <div class="row form-group">
-									<div class="col-md-12">
-										<label for="inputTime">Telefone</label>
-										<input type="tel" id="inputphone" name="phone" class="form-control" required value="<%= body.phone %>">
-									</div>
-								</div>
+							
+<form action="/reserva" method="POST">
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label for="inputName">Nome</label>
+      <input type="text" id="inputName" name="name"  class="form-control" required value="<%= body.name %>">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label for="inputEmail">E-mail</label>
+      <input type="email" id="inputEmail" name="email" class="form-control"value="<%= body.email %>">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label for="inputPeople">Pessoas</label>
+      <select id="inputPeople" name="people" class="form-control" title="Quantos Lugares" required>
+        <option value=""> -- selecione -- </option>
+        <option <% if (body.people == 1) { %>selected<% } %> value="1">1</option>
+        <option <% if (body.people == 2) { %>selected<% } %> value="2">2</option>
+        <option <% if (body.people == 3) { %>selected<% } %> value="3">3</option>
+        <option <% if (body.people == 4) { %>selected<% } %> value="4">4</option>
+        <option <% if (body.people == 5) { %>selected<% } %> value="5">5</option>
+        <option <% if (body.people == 6) { %>selected<% } %> value="6">6</option>
+        <option <% if (body.people == 7) { %>selected<% } %> value="7">7</option>
+        <option <% if (body.people == 8) { %>selected<% } %> value="8">8</option>
+        <option <% if (body.people == 9) { %>selected<% } %> value="9">9+</option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label for="inputDate">Data</label>
+      <input type="text" id="inputDate" name="date" class="form-control"  required value="<%= body.date %>">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label for="inputTime">Hora</label>
+      <input type="text" id="inputTime" name="time" class="form-control" required value="<%= body.time %>">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <label for="inputTime">Telefone</label>
+      <input type="tel" id="inputphone" name="phone" class="form-control" required value="<%= body.phone %>">
+    </div>
+  </div>
 
-								<div class="row form-group">
-									<div class="col-md-12">
-										<input type="submit" class="btn btn-primary btn-block" value="Reservar Agora">
-									</div>
-								</div>
-							</form>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <input type="submit" class="btn btn-primary btn-block" value="Reservar Agora">
+    </div>
+  </div>
+</form>
+
 						</div>
 						<div class="col-md-5 col-md-push-1 animate-box">
 

@@ -2,32 +2,58 @@ var menus = require('./../inc/cardapio');
 var express = require('express');
 var router = express.Router();
 var reserva = require('./../inc/reserva');
+var contato = require('./../inc/contact');
+
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+
   menus.getMenus().then(results => {
     res.render('index', {
       title: 'Boteco Do Mosquito',
-      menus: results,                  
-      banner: 'images/img_bg_1.jpg',
-      h1: 'Restaurante Saboroso!',
-      icone: 'restaurante.ico',
+      menus: results,
+      banner: 'images/mosquito2.jpg',
+      h1: 'Bar e Churrascaria!',
       isHome: true,
     });
 
-  }); 
+  });
 
 });
+
 
 /* GET Contatos page */
 router.get('/contact', function (req, res, next) {
 
-  res.render('contact', {
-    title: 'Contato - Boteco Do Mosquito',
-    banner: 'images/img_bg_3.jpg',
-    icone: 'restaurante.ico',
-    h1: 'Diga um oi!'
-  });
+  contato.render(req, res);
+  
+});
+
+/* POST Contatos page */
+router.post('/contact', function (req, res, next) {
+
+
+  if (!req.body.name) {
+    contato.render(req, res, "Digite o nome");
+  } else if (!req.body.email) {
+    contato.render(req, res, "Digite seu e-mail");
+  } else if (!req.body.phone) {
+    contato.render(req, res, "Seu telefone");
+  } else if (!req.body.message) {
+    contato.render(req, res, "Digite a mensagem");
+  } else {
+
+    contato.save(req.body).then(results => {
+
+      req.body = {};
+
+      contato.render(req, res, null, "Obrigado por entrar em contato!");
+    }).catch(err => {
+
+      contato.render(req, res, err.message);
+
+    });
+  }
 });
 
 /* GET Cardapio page  */
@@ -37,7 +63,7 @@ router.get('/menus', function (req, res, next) {
     res.render('menu', {
       title: 'Nosso Menu',
       menus: results,
-      banner: 'images/img_bg_1.jpg',
+      banner: 'images/mosquito4.jpg',
       icone: 'restaurante.ico',
       h1: 'Saboreie nosso menu!'
     });
@@ -85,7 +111,7 @@ router.get('/services', function (req, res, next) {
 
   res.render('services', {
     title: 'Nossos Serviços',
-    banner: 'images/img_bg_1.jpg',
+    banner: 'images/mosquito1.jpg',
     icone: 'restaurante.ico',
     h1: 'É um prazer poder servir!'
   });
