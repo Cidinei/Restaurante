@@ -5,7 +5,6 @@ var reserva = require('./../inc/reserva');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-
   menus.getMenus().then(results => {
     res.render('index', {
       title: 'Boteco Do Mosquito',
