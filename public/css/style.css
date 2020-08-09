@@ -92,6 +92,12 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-right: 15px;
 }
 
+.feature-center a img{
+  width: 175px;
+  height: 100px;
+
+} 
+
 .gtco-nav {
   position: absolute;
   top: 0;
@@ -103,6 +109,7 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 1001;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 @media screen and (max-width: 768px) {
   .gtco-nav {
     padding: 20px 0;

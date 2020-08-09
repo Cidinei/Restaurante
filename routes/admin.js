@@ -17,7 +17,8 @@ router.get('/logout', function (req, res, next) {
 
 router.get('/', function (req, res, next) {
   res.render("admin/index", {
-    title: 'admin',
+    title: 'ADM - CPANEL',
+    h1: 'ADM - CPANEL',
   });
 
 });
@@ -48,34 +49,40 @@ router.post('/login', function (req, res, next) {
 
 router.get('/contacts', function (req, res, next) {
   res.render("admin/contacts", {
-
+    title: 'Contatos',
+    h1: 'ADM - CPANEL',
   });
 
 });
 
 router.get('/menus', function (req, res, next) {
   res.render("admin/menus", {
-
+    title: 'Menus',
+    h1: 'CPANEL',
   });
 
 });
 
 router.get('/emails', function (req, res, next) {
   res.render("admin/emails", {
-
+    title: 'admin',
+    h1: 'CPANEL',
   });
 
 });
 
 router.get('/users', function (req, res, next) {
   res.render("admin/users", {
-
+    title: 'admin',
+    h1: 'CPANEL',
   });
 
 });
 router.get('/reservations', function (req, res, next) {
   res.render("admin/reservations", {
-    date,
+    date: '09-08-2020',
+    title: 'admin',
+    h1: 'CPANEL',
   });
 
 });
