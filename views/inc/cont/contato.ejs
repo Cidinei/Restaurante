@@ -9,7 +9,8 @@
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="sr-only" for="name">Nome</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" value="<%= body.name %>">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome"
+                  value="<%= body.name %>">
               </div>
 
             </div>
@@ -17,13 +18,15 @@
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="sr-only" for="email">E-mail</label>
-                <input type="text" id="email" name="email" class="form-control" placeholder="Digite seu e-mail" value="<%= body.email %>">
+                <input type="text" id="email" name="email" class="form-control" placeholder="Digite seu e-mail"
+                  value="<%= body.email %>">
               </div>
             </div>
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="sr-only" for="email">Telefone</label>
-                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Telefone de contato" value="<%= body.phone %>">
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Telefone de contato"
+                  value="<%= body.phone %>">
               </div>
             </div>
             <div class="row form-group">
@@ -44,23 +47,46 @@
           <div class="gtco-contact-info">
             <h3>Informações de Contato</h3>
             <ul>
-              
+
               <li class="address">R. Padre Antônio Patuí, 99 - Jardim Santa Maria, Toledo - PR, 85903-090</li>
               <li class="phone"><a href="tel://4532525355"> (45) 3252-5355</a></li>
-              <li class="email"><a href="mailto:contato@botecodomosquito.com.br">contato@botecodomosquito.com.br</a></li>
+              <li class="email"><a href="mailto:contato@botecodomosquito.com.br">contato@botecodomosquito.com.br</a>
+              </li>
 
             </ul>
 
-            <div class="live__chat-content" style="transform: matrix(0.999991, 0, 0, 0.999991, 0, 0);">
-              <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/botecodomosquito1/" data-tabs="messages" data-small-header="true" data-adapt-container-width="true" data-height="380px" data-hide-cover="true" data-show-facepile="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=690598281322324&amp;container_width=0&amp;height=380&amp;hide_cover=true&amp;href=https%3A%2F%2Fwww.facebook.com%2Fbotecodomosquito1%2F&amp;locale=pt_BR&amp;sdk=joey&amp;show_facepile=false&amp;small_header=true&amp;tabs=messages">
-                <span style="vertical-align: bottom; width: 340px; height: 380px;">
-                  <iframe width="1000px" height="380px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v3.1/plugins/page.php?adapt_container_width=true&amp;app_id=690598281322324&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df320e9314f3412%26domain%3Dbotedomosquito.com.br%26origin%3Dhttps%253A%252F%252Fbotecodomosquito.com.br%252Ff190b73705cd83c%26relation%3Dparent.parent&amp;container_width=0&amp;height=380&amp;hide_cover=true&amp;href=https%3A%2F%2Fwww.facebook.com%2Fbotecodomosquito1%2F&amp;locale=pt_BR&amp;sdk=joey&amp;show_facepile=false&amp;small_header=true&amp;tabs=messages" style="border: none; visibility: visible; width: 340px; height: 380px;" __idm_frm__="455" class="">
-                  </iframe>
-                </span>
+
+            <button type="button" class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal-cidi"><i class="fa fa-pencil"></i> Teste</button>&nbsp;
+           
+            <div class="modal fade" id="modal-cidi">
+              <div class="modal-dialog">
+                <div class="modal-content" style="border-top: 3px solid #f39c12;">
+              
+                    <div class="live__chat-content" style="transform: matrix(0.999991, 0, 0, 0.999991, 0, 0);">
+                      <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/botecodomosquito1/"
+                        data-tabs="messages" data-small-header="true" data-adapt-container-width="true" data-height="380px"
+                        data-hide-cover="true" data-show-facepile="false" fb-xfbml-state="rendered"
+                        fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=690598281322324&amp;container_width=0&amp;height=380&amp;hide_cover=true&amp;href=https%3A%2F%2Fwww.facebook.com%2Fbotecodomosquito1%2F&amp;locale=pt_BR&amp;sdk=joey&amp;show_facepile=false&amp;small_header=true&amp;tabs=messages">
+                        <span style="vertical-align: bottom; width: 340px; height: 380px;">
+                          <iframe width="1000px" height="380px" data-testid="fb:page Facebook Social Plugin"
+                            title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true"
+                            allowfullscreen="true" scrolling="no" allow="encrypted-media"
+                            src="https://www.facebook.com/v3.1/plugins/page.php?adapt_container_width=true&amp;app_id=690598281322324&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df320e9314f3412%26domain%3Dbotedomosquito.com.br%26origin%3Dhttps%253A%252F%252Fbotecodomosquito.com.br%252Ff190b73705cd83c%26relation%3Dparent.parent&amp;container_width=0&amp;height=380&amp;hide_cover=true&amp;href=https%3A%2F%2Fwww.facebook.com%2Fbotecodomosquito1%2F&amp;locale=pt_BR&amp;sdk=joey&amp;show_facepile=false&amp;small_header=true&amp;tabs=messages"
+                            style="border: none; visibility: visible; width: 340px; height: 380px;" __idm_frm__="455" class="">
+                          </iframe>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
               </div>
+                  
+                </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>

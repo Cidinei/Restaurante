@@ -36,8 +36,8 @@
                 <tbody>
                     <tr>
                         <td>1.</td>
-                        <td>Hcode</td>
-                        <td>contato@hcode.com.br</td>
+                        <td>ADMIN</td>
+                        <td>admin@botecodomosquito.com.br</td>
                         <td>
                             <button type="button" class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal-update"><i class="fa fa-pencil"></i> Editar</button>&nbsp;
                             <button type="button" class="btn btn-xs btn-warning btn-update" data-toggle="modal" data-target="#modal-update-password">
@@ -47,6 +47,8 @@
                 </tbody>
             </table>
         </div>
+
+        
         <!-- /.box-body -->
     </div>
 
@@ -142,6 +144,11 @@
               <label for="inputEmailUpdate">E-mail</label>
               <input type="email" class="form-control" id="inputEmailUpdate" name="email">
             </div>
+            <div class="form-group">
+              <label for="inputPhotoUpdate">Foto</label>
+              <img style="max-width: 128px; max-height: 128px; display: block;" src="dist/img/boxed-bg.jpg">
+              <input type="file" class="form-control" id="inputPhotoUpdate" name="photo">
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
@@ -155,45 +162,4 @@
   </div>
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      <a target="_blank" href="https://www.hcode.com.br">Hcode</a>
-    </div>
-    <!-- Default to the left -->
-    Projeto desenvolvido no curso online de JavaScript da Hcode Treinamentos.
-  </footer>
-
-</div>
-
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- PACE -->
-<script src="bower_components/PACE/pace.min.js"></script>
-<!-- SlimScroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- page script -->
-<script type="text/javascript">
-  // To make Pace works on Ajax calls
-  $(document).ajaxStart(function () {
-    Pace.restart()
-  })
-  $('.ajax').click(function () {
-    $.ajax({
-      url: '#', success: function (result) {
-        $('.ajax-content').html('<hr>Ajax Request Completed !')
-      }
-    })
-  })
-</script>
-
-</body>
-</html>
+  <%- include('inc/page-footer') -%>
