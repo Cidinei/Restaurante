@@ -77,6 +77,13 @@ router.get('/users', function (req, res, next) {
   });
 
 });
+router.get('/parceiros', function (req, res, next) {
+  res.render("admin/parceiros", {
+    title: 'ADMIN - CPANEL',
+    h1: 'ADM - CPANEL',
+  });
+
+});
 
 router.get('/reservations', function (req, res, next) {
   res.render("admin/reservations", {

@@ -5,20 +5,21 @@ var reserva = require('./../inc/reserva');
 var contato = require('./../inc/contact');
 
 
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
+
 
   menus.getMenus().then(results => {
     res.render('index', {
       title: 'Boteco Do Mosquito',
       menus: results,
+      parceiros: results,
       banner: 'images/mosquito2.jpg',
       h1: 'Bar e Churrascaria!',
       isHome: true,
     });
-
   });
-
 });
 
 
@@ -26,7 +27,7 @@ router.get('/', function (req, res, next) {
 router.get('/contact', function (req, res, next) {
 
   contato.render(req, res);
-  
+
 });
 
 /* POST Contatos page */
@@ -113,7 +114,7 @@ router.get('/services', function (req, res, next) {
     title: 'Nossos Serviços',
     banner: 'images/mosquito1.jpg',
     icone: 'restaurante.ico',
-    h1: 'É um prazer poder servir!'
+    h1: 'É um prazer poder servir!',
   });
 });
 
