@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
   res.render("admin/index", {
     title: 'ADMIN - CPANEL',
     h1: 'ADM - CPANEL',
+    pag: 'Tela Inicial',
   });
 
 });
@@ -50,6 +51,7 @@ router.get('/contacts', function (req, res, next) {
   res.render("admin/contacts", {
     title: 'ADMIN - CPANEL',
     h1: 'ADM - CPANEL',
+    pag: 'Contatos',
   });
 
 });
@@ -58,6 +60,7 @@ router.get('/menus', function (req, res, next) {
   res.render("admin/menus", {
     title: 'ADMIN - CPANEL',
     h1: 'ADM - CPANEL',
+    pag: 'Menus',
   });
 
 });
@@ -66,6 +69,7 @@ router.get('/emails', function (req, res, next) {
   res.render("admin/emails", {
     title: 'ADMIN - CPANEL',
     h1: 'ADM - CPANEL',
+    pag: 'E-mails',
   });
 
 });
@@ -74,6 +78,7 @@ router.get('/users', function (req, res, next) {
   res.render("admin/users", {
     title: 'ADMIN - CPANEL',
     h1: 'ADM - CPANEL',
+    pag: 'Usuários',
   });
 
 });
@@ -81,6 +86,7 @@ router.get('/parceiros', function (req, res, next) {
   res.render("admin/parceiros", {
     title: 'ADMIN - CPANEL',
     h1: 'ADM - CPANEL',
+    pag: 'Parceiros',
   });
 
 });
@@ -90,6 +96,7 @@ router.get('/reservations', function (req, res, next) {
     date: '09-08-2020',
     title: 'ADMIN - CPANEL',
     h1: 'ADM - CPANEL',
+    pag: 'Reservas',
   });
 
 });
