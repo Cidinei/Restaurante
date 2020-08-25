@@ -19,7 +19,7 @@
 
                     <div class="tab-content">
                       <div class="tab-content-inner active" data-content="signup">
-                        <h3 class="cursive-font">Reserva de Pre-venda </h3>
+                        <h3 class="cursive-font">Reserva De Mesas</h3>
                         <form action="/reserva" method="POST">
                           <div class="row form-group">
                             <div class="col-md-12">
@@ -35,7 +35,7 @@
                           </div>
                           <div class="row form-group">
                             <div class="col-md-12">
-                              <label for="inputPeople">Numero de quartos</label>
+                              <label for="inputPeople">Numero De Pessoas</label>
                               <select id="inputPeople" name="people" class="form-control">
                                 <option value=""> -- selecione -- </option>
                                 <option value="1">1</option>
@@ -54,14 +54,18 @@
                           </div>
                           <div class="row form-group">
                             <div class="col-md-12">
-                              <label for="inputTime">Hora</label>
-                              <input type="text" id="inputTime" name="time" class="form-control">
+                              <label for="inputphon4e">Telefone</label>
+                              <input type="tel" id="inputphone" name="phone" class="form-control" required >
                             </div>
                           </div>
+
+              
                           <div class="row form-group">
                             <div class="col-md-12">
-                              <label for="inputphone">Telefone</label>
-                              <input type="tel" id="inputphone" name="phone" class="form-control" required >
+                              <p>Horário Limite Das Reservas:</p>
+                              <span class="intro-text-small">Nas Quartas e Quintas até
+                                <a>20:15</a>, nos Sábados até <a>12:00</a> e aos Domingos até as <a>11:30</a>.
+                              </span>
                             </div>
                           </div>
 

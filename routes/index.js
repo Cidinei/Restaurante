@@ -87,9 +87,7 @@ router.post('/reserva', function (req, res, next) {
   } else if (!req.body.people) {
     reserva.render(req, res, "Digite numero de pessoas");
   } else if (!req.body.date) {
-    reserva.render(req, res, "Digite uma data");
-  } else if (!req.body.time) {
-    reserva.render(req, res, "EscolHorario");
+    reserva.render(req, res, "Digite uma data")
   } else if (!req.body.phone) {
     reserva.render(req, res, "Seu Telefone");
   } else {
