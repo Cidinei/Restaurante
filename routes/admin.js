@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
+var menus = require("./../inc/cardapio");
 var users = require("./../inc/users");
+var admin = require("./../inc/admin");
 
 router.use(function (req, res, next) {
   if (['/login'].indexOf(req.url) === -1 && !req.session.user) {
@@ -10,18 +12,14 @@ router.use(function (req, res, next) {
   }
 });
 
+router.use(function (req, res, next) {
+  req.menus = admin.getMenus(req);
+  next();
+});
+
 router.get('/logout', function (req, res, next) {
   delete req.session.user;
   res.redirect("/admin/login");
-});
-
-router.get('/', function (req, res, next) {
-  res.render("admin/index", {
-    title: 'ADMIN - CPANEL',
-    h1: 'ADM - CPANEL',
-    pag: 'Tela Inicial',
-  });
-
 });
 
 router.get('/login', function (req, res, next) {
@@ -47,57 +45,82 @@ router.post('/login', function (req, res, next) {
 
 });
 
-router.get('/contacts', function (req, res, next) {
-  res.render("admin/contacts", {
-    title: 'ADMIN - CPANEL',
-    h1: 'ADM - CPANEL',
-    pag: 'Contatos',
+router.get('/', function (req, res, next) {
+  admin.dashboard().then(data => {
+    res.render("admin/index", admin.getParams(req, {
+      pag: "Tela Inicial",
+      data
+    }));
+
+  }).catch(err => {
+    console.error(err);
   });
 
 });
 
+router.get('/contacts', function (req, res, next) {
+  res.render("admin/contacts", admin.getParams(req, {
+    pag: "Contatos",
+  }));
+
+});
+
+router.post('/menus', function (req, res, next) {
+
+  menus.save(req.fields, req.files).then(results => {
+    res.send(results);
+  }).catch(err => {
+    res.send(err);
+  });
+
+});
+
+
 router.get('/menus', function (req, res, next) {
-  res.render("admin/menus", {
-    title: 'ADMIN - CPANEL',
-    h1: 'ADM - CPANEL',
-    pag: 'Menus',
+
+  menus.getMenus().then(data => {
+
+    res.render("admin/menus", admin.getParams(req, {
+      pag: "Menus",
+      data
+    }));
+
   });
 
 });
 
 router.get('/emails', function (req, res, next) {
-  res.render("admin/emails", {
-    title: 'ADMIN - CPANEL',
-    h1: 'ADM - CPANEL',
-    pag: 'E-mails',
-  });
+  res.render("admin/emails", admin.getParams(req, {
+    pag: "E-mails",
+  }));
 
 });
 
 router.get('/users', function (req, res, next) {
-  res.render("admin/users", {
-    title: 'ADMIN - CPANEL',
-    h1: 'ADM - CPANEL',
-    pag: 'Usuários',
-  });
+  res.render("admin/users", admin.getParams(req, {
+    pag: "Usuários",
+  }));
 
 });
 router.get('/parceiros', function (req, res, next) {
-  res.render("admin/parceiros", {
-    title: 'ADMIN - CPANEL',
-    h1: 'ADM - CPANEL',
-    pag: 'Parceiros',
-  });
+  res.render("admin/parceiros", admin.getParams(req, {
+    pag: "Parceiros",
+  }));
 
 });
 
 router.get('/reservations', function (req, res, next) {
-  res.render("admin/reservations", {
-    date: '09-08-2020',
-    title: 'ADMIN - CPANEL',
-    h1: 'ADM - CPANEL',
-    pag: 'Reservas',
-  });
+  res.render("admin/reservations", admin.getParams(req, {
+    pag: "Tela Inicial",
+    date: {},
+  }));
+
+});
+
+router.get('/comments', function (req, res, next) {
+  res.render("admin/comments", admin.getParams(req, {
+    pag: "Comentários",
+  }));
 
 });
 

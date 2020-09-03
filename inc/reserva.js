@@ -21,7 +21,7 @@ module.exports = {
       fields.date = `${date[2]}-${date[1]}-${date[0]}`;
 
       conn.query(`
-      INSERT INTO tb_reserva (name, email, people, date, phone)
+      INSERT INTO tb_reservas (name, email, people, date, phone)
       VALUES(?,?,?,?,?)
       `, [
         fields.name,

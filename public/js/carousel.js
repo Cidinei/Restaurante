@@ -1,7 +1,7 @@
 
 $(function(){
 
-  $(".carousel").slick({
+  $(".txtCarousel").slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -23,6 +23,8 @@ $(function(){
     slidesToShow: 5,
     slidesToScroll: 1,
     centerMode: true,
+    swipeToSlide: true,
+    SlickPlay: 'none',
     prevArrow: $("#arrow-prev1"),
     nextArrow: $("#arrow-next1"),
     responsive: [
